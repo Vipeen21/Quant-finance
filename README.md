@@ -1,5 +1,3 @@
-This "Hybrid" approach combines the **academic prestige** of Option 1 with the **practical accessibility** of Option 2. It’s designed to impress recruiters with your theoretical knowledge while showing you actually know how to build and backtest tools.
-
 ***
 
 # Quantitative Finance & Stochastic Calculus 📈
@@ -63,6 +61,5 @@ To see the power of stochastic calculus in action, I recommend starting with:
 3.  **`the_implied_volatility_surface.ipynb`**: For high-end data visualization.
 
 ---
-*Maintained by [Vipeen Kumar](https://github.com/Vipeen21)*
 
 ***
