@@ -60,6 +60,4 @@ To see the power of stochastic calculus in action, I recommend starting with:
 2.  **`Black-ScholesTrading.ipynb`**: To see the theoretical model applied to trade.
 3.  **`the_implied_volatility_surface.ipynb`**: For high-end data visualization.
 
----
-
 ***
