@@ -1,6 +1,6 @@
 # 📈 Quantitative Finance & Stochastic Calculus Engine
 
-[![GitHub follow](https://img.shields.io/github/followers/Vipeen21?label=Follow%20%40Vipeen21&style=social)](https://github.com/Vipeen21)
+[![GitHub follow](https://img.shields.io/github/followers/Vipeen21?label=Follow%20%40Vipeen21&style=for-the-badge&color=orange)](https://github.com/Vipeen21)
 [![GitHub stars](https://img.shields.io/github/stars/Vipeen21/Quant-finance?style=for-the-badge&color=yellow)](https://github.com/Vipeen21/Quant-finance/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/Vipeen21/Quant-finance?style=for-the-badge&color=blue)](https://github.com/Vipeen21/Quant-finance/network/members)
 [![GitHub license](https://img.shields.io/github/license/Vipeen21/Quant-finance?style=for-the-badge&color=green)](https://github.com/Vipeen21/Quant-finance/blob/main/LICENSE)
