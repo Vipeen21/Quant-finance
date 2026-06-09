@@ -1,6 +1,6 @@
 # 📈 Quantitative Finance & Stochastic Calculus Engine
 
-[![GitHub followers](https://img.shields.io/github/followers/Vipeen21?style=for-the-badge&color=21262d)](https://github.com/Vipeen21)
+[![GitHub follow](https://img.shields.io/github/followers/Vipeen21?label=Follow%20%40Vipeen21&style=social)](https://github.com/Vipeen21)
 [![GitHub stars](https://img.shields.io/github/stars/Vipeen21/Quant-finance?style=for-the-badge&color=yellow)](https://github.com/Vipeen21/Quant-finance/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/Vipeen21/Quant-finance?style=for-the-badge&color=blue)](https://github.com/Vipeen21/Quant-finance/network/members)
 [![GitHub license](https://img.shields.io/github/license/Vipeen21/Quant-finance?style=for-the-badge&color=green)](https://github.com/Vipeen21/Quant-finance/blob/main/LICENSE)
@@ -106,7 +106,7 @@ Whether you are looking to fix a mathematical edge-case, optimize a matrix calcu
 4. **Push** to the branch (`git push origin feature/StochasticUpgrade`).
 5. Open a **Pull Request**.
 
-## 🤝 Connect & Collaborate
+## 🙏 Connect & Collaborate
 
 If this repository assists your quantitative research, trading strategy formulation, or stochastic calculus foundations, **consider giving it a star!** ⭐
 [⭐ Star This Repo](https://github.com/Vipeen21/Quant-finance/stargazers) | [🍴 Fork This Repo](https://github.com/Vipeen21/Quant-finance/network/members)
