@@ -14,106 +14,106 @@
   <img src="https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white" alt="Jupyter Notebook">
 </p>
 
-This repository bridges the gap between high-level stochastic calculus theory and practical algorithmic execution. It features interactive implementations covering everything from classical risk-neutral pricing frameworks to complex, non-constant volatility regimes.
+This repository bridges the gap between high-level stochastic calculus theory and practical computational execution. It features interactive implementations covering everything from classical risk-neutral pricing frameworks to complex, non-constant volatility regimes and mathematical integration foundations.
 
 ---
 
-## 🎯 Flagship Frameworks
+## 🏗️ Engine Architecture & Mathematical Workflow
+
+The core framework decouples foundational stochastic calculus elements from numerical layers and empirical calibration matrices to map complex asset profiles dynamically.
+
+```mermaid
+graph TD
+    A[Stochastic Foundations: Ito & SDEs] --> B[Pricing Engine Frameworks]
+    B --> C[Analytical: Black-Scholes]
+    B --> D[Stochastic Volatility: Heston Model]
+    B --> E[Numerical: Finite Difference Mesh]
+    D --> F[Calibration Layer: Market Implied Vol Surfaces]
+    E --> F
+    F --> G[Dynamic Risk Mitigation & Volatility Analysis]
+
+```
+
+---
+
+## 🎯 Core Frameworks Breakdown
 
 ### 1. Stochastic Volatility & The Heston Model
-Real-world asset returns exhibit volatility clustering and leverage effects that the classical Black-Scholes model fails to capture. This framework models market dynamics using two coupled Stochastic Differential Equations (SDEs):
+
+Real-world asset returns exhibit volatility clustering and leverage effects that classical constant-volatility frameworks fail to capture. This engine models asset dynamics via two coupled Stochastic Differential Equations (SDEs):
 
 $$dS_t = \mu S_t dt + \sqrt{\nu_t} S_t dW_{1,t}$$
 
 $$d\nu_t = \kappa(\theta - \nu_t) dt + \sigma \sqrt{\nu_t} dW_{2,t}$$
 
-* **Calibration Layer:** Fits structural parameters ($\kappa, \theta, \sigma, \rho$) to empirical market option chains.
-* **Pricing Engine:** Solves the characteristic function to value European derivatives under stochastic regimes.
+* **Calibration Layer:** Mathematically fits structural parameters ($\kappa, \theta, \sigma, \rho$) to empirical market option chains.
+* **Pricing Engine:** Evaluates the characteristic function via Fourier inversions to value European derivatives under non-constant volatility.
 
-### 2. Implied Volatility Surfaces & Numerical Methods
-* **Volatility Surfaces:** Generates dynamic 3D visualizations mapping the continuous implied volatility smile and skew across varying strikes and maturities.
-* **Finite Difference Methods (FDM):** Solves the Black-Scholes partial differential equations (PDEs) numerically to value path-dependent and exotic options.
+### 2. Implied Volatility Surfaces & Numerical Discretization
 
----
-
-## 🏗️ Quantitative Architecture & System Workflow
-
-The workspace decouples mathematical foundation layers from live asset analysis and algorithmic strategy testing:
-
-```mermaid
-graph TD
-    A[Stochastic Foundations: Itô's Lemma] --> B[Risk-Neutral Valuation Layer]
-    B --> C{Execution Domain}
-    C -->|Analytical / Numerical| D[Heston & Black-Scholes Pricing]
-    C -->|Data Visualization| E[3D Implied Volatility Surfaces]
-    C -->|System Testing| F[Backtesting.py Strategy Matrix]
-    D --> G[Risk Management & Greeks Execution]
-    E --> G
-    F --> G
-
-```
+* **Volatility Surfaces:** Generates dynamic, multi-dimensional structures mapping the continuous implied volatility smile and skew across varying strikes and maturities.
+* **Finite Difference Methods:** Complements analytical equations by numerically solving pricing Partial Differential Equations (PDEs) under discrete boundary conditions.
 
 ---
 
-## 📊 Algorithmic Matrix & Methodology Spectrum
+## 📊 Comparative Framework Analysis
 
-| Model / Methodology | Mathematical Engine | Primary Use Case | Market Advantage |
-| --- | --- | --- | --- |
-| **Heston Model** | Square-root Diffusion SDEs | Pricing under stochastic volatility | Captures volatility smiles, skews, and empirical asset distribution tail behavior. |
-| **Black-Scholes** | Geometric Brownian Motion | Classical option valuation & Greeks | Establishes exact baseline analytical solutions for risk-neutral pricing benchmarks. |
-| **Finite Differences** | Implicit/Explicit PDE Solvers | Exotic & path-dependent options | Handles complex boundary conditions where closed-form solutions do not exist. |
-| **Backtesting Engine** | Event-Driven Vectorization | Systematic strategy validation | Quantifies historical performance, drawdowns, and Sharpe ratios before deployment. |
+| Model Framework | Volatility Assumption | Solution Method | Key Strength | Ideal Use-Case |
+| --- | --- | --- | --- | --- |
+| **Black-Scholes** | Constant $\sigma$ | Analytical (Closed-form) | Speed & benchmark stability | Plain-vanilla liquid options |
+| **Heston Model** | Stochastic $\nu_t$ (CIR Process) | Semi-Analytical (Fourier) | Captures smile, skew & leverage | Long-dated options, exotic profiles |
+| **Finite Differences** | Flexible / Arbitrary | Numerical (Grid/Mesh) | Handles path-dependence & barriers | American options, custom boundaries |
 
 ---
 
 ## 📂 Repository Blueprint
 
-```text
-├── getting_started_tutorials/       # Core introductory notebooks for stochastic calculus
-├── Heston Pricing 1.ipynb           # Stochastic Volatility calibration pipelines
-├── Heston Pricing 2.ipynb           # Advanced pricing simulations under Heston regimes
-├── the_implied_volatility_surface.ipynb # 3D mapping of market volatility smiles and skews
-├── finite_differences_option_pricing.ipynb # Numerical PDE solvers for option values
-├── Black-ScholesTrading.ipynb       # Application of baseline analytic pricing models
-├── itos_lemma.ipynb                 # Mathematical proofs and foundational stochastic calculus
-├── ito_integration.ipynb            # Numerical integration of stochastic paths
-├── algo trading with backtesting.py # Automated, vector-based backtesting logic
-└── algo-trading_using_alpaca_api.py # Production broker infrastructure wiring
-
-```
-
----
-
-## ⚡ Quick Start & Setup
-
-Clone the system and spin up the quantitative analysis notebooks locally in under two minutes:
-
 ```bash
-# 1. Clone the repository
-git clone [https://github.com/Vipeen21/Quant-finance.git](https://github.com/Vipeen21/Quant-finance.git)
-cd Quant-finance
-
-# 2. Install production-validated mathematics dependencies
-pip install numpy scipy pandas matplotlib seaborn backtesting alpaca-trade-api
-
-# 3. Launch the analytical workspace
-jupyter notebook
+├── getting_started_tutorials/     # Foundational concepts & entry points
+├── Black-ScholesTrading.ipynb     # Closed-form pricing & basic Greeks infrastructure
+├── Heston Pricing 1.ipynb         # SDE setup and characteristic function solving
+├── Heston Pricing 2.ipynb         # Fourier inversions and parameters calibration
+├── finite_differences_option_pricing.ipynb # PDE numerical mesh methods
+├── the_implied_volatility_surface.ipynb    # 3D mapping of skew and smile curves
+├── ito_integration.ipynb          # Computational notebooks on Ito's Integral
+├── itos_lemma.ipynb               # Structural expansions of stochastic variables
+├── market implied volatility.py   # Real-time asset implied volatility extraction
+├── risk free option trading.py    # Arbitrage boundary verification scripts
+└── LICENSE                        # Open-source distribution permissions
 
 ```
 
 ---
 
-## 🔮 Future Roadmap & Scalability Matrix
+## 🗺️ Future Roadmap & Expansion Work
 
-* [ ] **Local Volatility Inversion:** Implement the Dupire Equation to extract deterministic local volatility surfaces directly from market options.
-* [ ] **Deep Hedging Fields:** Train neural network models to execute optimal discrete-time delta hedging under transaction costs.
-* [ ] **GPU Acceleration:** Port the finite difference grid solvers to PyTorch/CUDA to scale multi-asset option matrices.
+* [x] Implement core Ito Calculus & SDE simulation environments.
+* [x] Build semi-analytical closed-form frameworks (Black-Scholes, Heston).
+* [x] Launch 3D Implied Volatility Surface mapping toolsets.
+* [ ] **Phase 4: Neural Volatility Operators:** Integrate Physics-Informed Neural Networks (PINNs) to accelerate option PDE grid solving under tight latency limits.
+* [ ] **Phase 5: Rough Volatility Frameworks:** Implement fractional Brownian motion (e.g., Rough Heston, rBergomi) to address structural micro-market irregularities.
+* [ ] **Phase 6: Advanced Calibration Optimization:** Deploy hybrid genetic-gradient algorithms to resolve non-convex objective spaces during Heston parameter fitting.
 
 ---
+
+## 🤝 Community & Contribution
+
+Whether you are looking to fix a mathematical edge-case, optimize a matrix calculation in NumPy, or add a new stochastic asset path generator, contributions are highly welcome!
+
+1. **Fork** the project repository.
+2. **Create** your feature branch (`git checkout -b feature/StochasticUpgrade`).
+3. **Commit** your changes (`git commit -m 'Add neural network calibration layer'`).
+4. **Push** to the branch (`git push origin feature/StochasticUpgrade`).
+5. Open a **Pull Request**.
 
 ## 🤝 Connect & Collaborate
 
 If this repository assists your quantitative research, trading strategy formulation, or stochastic calculus foundations, **consider giving it a star!** ⭐
+[⭐ Star This Repo](https://github.com/Vipeen21/Quant-finance/stargazers) | [🍴 Fork This Repo](https://github.com/Vipeen21/Quant-finance/network/members)
+
+**Vipeen Kumar** *Quantitative Researcher & Data Scientist*
+
+Let's collaborate on quantitative finance, stochastic systems, and financial AI architecture.
 
 * **Author:** Vipeen Kumar
 * **LinkedIn:** [Profile Link](https://www.google.com/search?q=https://linkedin.com/in/vipeen-kumar-908212b8)
