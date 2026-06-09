@@ -1,10 +1,10 @@
-
 # 📈 Quantitative Finance & Stochastic Calculus Engine
 
-[![GitHub followers](https://img.shields.io/github/followers/Vipeen21?style=for-the-badge&color=21262d&labelColor=161b22&logo=github)](https://github.com/Vipeen21)
-[![GitHub stars](https://img.shields.io/github/stars/Vipeen21/Quant-finance?style=for-the-badge&color=e3b341&labelColor=161b22&logo=github)](https://github.com/Vipeen21/Quant-finance/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Vipeen21/Quant-finance?style=for-the-badge&color=58a6ff&labelColor=161b22&logo=github)](https://github.com/Vipeen21/Quant-finance/network/members)
-[![GitHub license](https://img.shields.io/github/license/Vipeen21/Quant-finance?style=for-the-badge&color=30a14e&labelColor=161b22)](https://github.com/Vipeen21/Quant-finance/blob/main/LICENSE)
+[![GitHub followers](https://img.shields.io/github/followers/Vipeen21?style=for-the-badge&color=21262d)](https://github.com/Vipeen21)
+[![GitHub stars](https://img.shields.io/github/stars/Vipeen21/Quant-finance?style=for-the-badge&color=yellow)](https://github.com/Vipeen21/Quant-finance/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Vipeen21/Quant-finance?style=for-the-badge&color=blue)](https://github.com/Vipeen21/Quant-finance/network/members)
+[![GitHub license](https://img.shields.io/github/license/Vipeen21/Quant-finance?style=for-the-badge&color=green)](https://github.com/Vipeen21/Quant-finance/blob/main/LICENSE)
+
 
 <p align="left">
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
