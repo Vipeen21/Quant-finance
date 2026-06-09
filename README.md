@@ -115,7 +115,7 @@ If this repository assists your quantitative research, trading strategy formulat
 
 Let's collaborate on quantitative finance, stochastic systems, and financial AI architecture.
 
-* **Author:** Vipeen Kumar
+* **Author:** Vipeen Kumar 
 * **LinkedIn:** [Profile Link](https://www.google.com/search?q=https://linkedin.com/in/vipeen-kumar-908212b8)
 * **Portfolio Website:** [vipeen21.github.io](https://www.google.com/search?q=https://vipeen21.github.io)
 
