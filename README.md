@@ -22,140 +22,40 @@ This repository bridges the gap between high-level stochastic calculus theory an
 
 The core framework decouples foundational stochastic calculus elements from numerical layers and empirical calibration matrices to map complex asset profiles dynamically.
 
-```mermaid
-graph TB
-    %% Class Definitions for Styling
-    classDef titleStyle fill:none,stroke:none,font-size:28px,font-weight:bold,font-family:Arial;
-    classDef sectionTitle fill:none,stroke:none,font-size:16px,font-weight:bold,font-family:Arial;
-    classDef noisyInput fill:#FADBD8,stroke:#E74C3C,stroke-width:1.5px,rx:5px,ry:5px,font-family:Arial;
-    classDef queryInput fill:#EBDEF0,stroke:#8E44AD,stroke-width:1.5px,rx:5px,ry:5px,font-family:Arial;
-    classDef darkLayer fill:#5D6D7E,stroke:#34495E,stroke-width:1.5px,rx:4px,ry:4px,color:white,font-weight:bold,font-family:Arial;
-    classDef whiteLayer fill:#FFFFFF,stroke:#34495E,stroke-width:1.5px,rx:4px,ry:4px,font-family:Arial;
-    classDef intermediateText fill:#F2F4F4,stroke:#BDC3C7,stroke-width:1.5px,rx:4px,ry:4px,color:#7F8C8D,font-family:Arial;
-    classDef activeText fill:#FFFFFF,stroke:#34495E,stroke-width:1.5px,rx:4px,ry:4px,color:black,font-weight:bold,font-family:Arial;
-    classDef canvasOutput fill:#48C9B0,stroke:#16A085,stroke-width:1.5px,rx:4px,ry:4px,font-weight:bold,font-family:Arial;
-    classDef canvasOutputHighlight fill:#F1948A,stroke:#C0392B,stroke-width:1.5px,rx:4px,ry:4px,font-weight:bold,font-family:Arial;
 
-    %% Title
-    TITLE[DiffusionGemma]:::titleStyle
-
-    %% --- FIRST ROW: INPUT HEADERS ---
-    subgraph Row1 [ ]
-        direction LR
-        NC_TITLE[Noisy Canvas]:::sectionTitle
-        space1[ ]:::titleStyle
-        IQ_TITLE[Input Query]:::sectionTitle
-    end
-    style Row1 fill:none,stroke:none
-
-    %% --- SECOND ROW: INPUT TOKENS ---
-    subgraph Row2 [ ]
-        direction LR
-        %% Noisy Canvas Inputs
-        n1[pen]:::noisyInput
-        n2[sea]:::noisyInput
-        n3[test]:::noisyInput
-        n4[hi]:::noisyInput
-        
-        %% Spacing
-        space2[ ]:::titleStyle
-        
-        %% Input Query Inputs
-        q1[The]:::queryInput
-        q2[LLM]:::queryInput
-        q3[picks]:::queryInput
-    end
-    style Row2 fill:none,stroke:none
-
-    %% --- THIRD ROW: CORE ARCHITECTURE ---
-    
-    %% Left Top Block (First Denoising Stage)
-    subgraph Block1 [ ]
-        direction TB
-        tel1[Token Embedding Layer]:::darkLayer
-        den1["Denoiser<br>(decoder with<br>bidirectional attention)"]:::whiteLayer
-        lm1[LM Head]:::darkLayer
-        tel1 --> den1 --> lm1
-    end
-    style Block1 fill:#A9CCE3,stroke:#2980B9,stroke-width:1px,rx:8px,ry:8px
-
-    %% Right Block (Encoder Stage)
-    subgraph Block2 [ ]
-        direction TB
-        tel2[Token Embedding Layer]:::darkLayer
-        enc["Encoder<br>(decoder with<br>causal attention)"]:::whiteLayer
-        tel2 --> enc
-    end
-    style Block2 fill:#A9CCE3,stroke:#2980B9,stroke-width:1px,rx:8px,ry:8px
-
-    %% --- FOURTH ROW: INTERMEDIATE TOKENS ---
-    subgraph Row4 [ ]
-        direction LR
-        it1[all]:::intermediateText
-        it2[words]:::activeText
-        it3[dogs]:::intermediateText
-        it4[where]:::intermediateText
-    end
-    style Row4 fill:none,stroke:none
-
-    %% --- FIFTH ROW: SECOND DENOISING BLOCK ---
-    subgraph Block3 [ ]
-        direction TB
-        tel3[Token Embedding Layer]:::darkLayer
-        den2["Denoiser<br>(decoder with<br>bidirectional attention)"]:::whiteLayer
-        lm2[LM Head]:::darkLayer
-        tel3 --> den2 --> lm2
-    end
-    style Block3 fill:#A9CCE3,stroke:#2980B9,stroke-width:1px,rx:8px,ry:8px
-
-    %% --- SIXTH ROW: OUTPUT CANVAS ---
-    subgraph Row6 [ ]
-        direction LR
-        out1[all]:::canvasOutput
-        out2[words]:::canvasOutput
-        out3[gemma]:::canvasOutputHighlight
-        out4[once]:::canvasOutput
-    end
-    style Row6 fill:none,stroke:none
-    
-    OC_TITLE[Updated canvas]:::sectionTitle
-
-    %% --- CONNECTIONS & FLOW ---
-    
-    %% Inputs to Top Blocks
-    n1 & n2 & n3 & n4 --> Block1
-    q1 & q2 & q3 --> Block2
-
-    %% Cross-block KV-cache & Conditioning
-    Block2 -- KV-cache --> Block1
-    Block2 -- KV-cache ----> Block3
-    Block1 -- self-<br>conditioning ----> tel3
-
-    %% Intermediate Connections
-    Block1 --> it1 & it2 & it3 & it4
-    it1 & it2 & it3 & it4 --> Block3
-    
-    %% Final Output Connections
-    Block3 --> out1 & out2 & out3 & out4
-    out1 & out2 & out3 & out4 --- OC_TITLE
-
-    %% Structural Alignment Tweaks
-    TITLE --- Row1
-    Row1 --- Row2
-```
 
 
 ```mermaid
 graph TD
-    A[Stochastic Foundations: Ito & SDEs] --> B[Pricing Engine Frameworks]
-    B --> C[Analytical: Black-Scholes]
-    B --> D[Stochastic Volatility: Heston Model]
-    B --> E[Numerical: Finite Difference Mesh]
-    D --> F[Calibration Layer: Market Implied Vol Surfaces]
-    E --> F
-    F --> G[Dynamic Risk Mitigation & Volatility Analysis]
+    %% Custom styling definitions for readability
+    classDef mainHeading fill:#1A5276,stroke:#113A54,stroke-width:2px,color:#FFFFFF,font-weight:bold,font-family:Arial,padding:12px;
+    classDef primaryBlock fill:#2E4053,stroke:#1C2833,stroke-width:2px,color:#FFFFFF,font-weight:bold,font-family:Arial,padding:10px;
+    classDef modelBlock fill:#EAECEE,stroke:#95A5A6,stroke-width:1.5px,color:#1C2833,font-weight:bold,font-family:Arial,padding:10px;
+    classDef calibrationBlock fill:#D35400,stroke:#A04000,stroke-width:2px,color:#FFFFFF,font-weight:bold,font-family:Arial,padding:12px;
+    classDef riskBlock fill:#196F3D,stroke:#114B29,stroke-width:2px,color:#FFFFFF,font-weight:bold,font-family:Arial,padding:12px;
 
+    %% Global link styling for high contrast lines
+    linkStyle default stroke:#566573,stroke-width:2px;
+
+    %% Nodes and Assignments
+    A[Stochastic Foundations:<br>Ito & SDEs]:::mainHeading
+    B[Pricing Engine Frameworks]:::primaryBlock
+    C[Analytical:<br>Black-Scholes]:::modelBlock
+    D[Stochastic Volatility:<br>Heston Model]:::modelBlock
+    E[Numerical:<br>Finite Difference Mesh]:::modelBlock
+    F[Calibration Layer:<br>Market Implied Vol Surfaces]:::calibrationBlock
+    G[Dynamic Risk Mitigation &<br>Volatility Analysis]:::riskBlock
+
+    %% Flow/Connections
+    A --> B
+    B --> C
+    B --> D
+    B --> E
+    D --> F
+    E --> F
+    F --> G
 ```
+
 
 ---
 
