@@ -29,7 +29,6 @@ graph TB
     classDef sectionTitle fill:none,stroke:none,font-size:16px,font-weight:bold,font-family:Arial;
     classDef noisyInput fill:#FADBD8,stroke:#E74C3C,stroke-width:1.5px,rx:5px,ry:5px,font-family:Arial;
     classDef queryInput fill:#EBDEF0,stroke:#8E44AD,stroke-width:1.5px,rx:5px,ry:5px,font-family:Arial;
-    classDef blockStyle fill:#A9CCE3,stroke:#2980B9,stroke-width:1px,rx:8px,ry:8px;
     classDef darkLayer fill:#5D6D7E,stroke:#34495E,stroke-width:1.5px,rx:4px,ry:4px,color:white,font-weight:bold,font-family:Arial;
     classDef whiteLayer fill:#FFFFFF,stroke:#34495E,stroke-width:1.5px,rx:4px,ry:4px,font-family:Arial;
     classDef intermediateText fill:#F2F4F4,stroke:#BDC3C7,stroke-width:1.5px,rx:4px,ry:4px,color:#7F8C8D,font-family:Arial;
@@ -78,7 +77,7 @@ graph TB
         lm1[LM Head]:::darkLayer
         tel1 --> den1 --> lm1
     end
-    style Block1 class:blockStyle
+    style Block1 fill:#A9CCE3,stroke:#2980B9,stroke-width:1px,rx:8px,ry:8px
 
     %% Right Block (Encoder Stage)
     subgraph Block2 [ ]
@@ -87,7 +86,7 @@ graph TB
         enc["Encoder<br>(decoder with<br>causal attention)"]:::whiteLayer
         tel2 --> enc
     end
-    style Block2 class:blockStyle
+    style Block2 fill:#A9CCE3,stroke:#2980B9,stroke-width:1px,rx:8px,ry:8px
 
     %% --- FOURTH ROW: INTERMEDIATE TOKENS ---
     subgraph Row4 [ ]
@@ -107,7 +106,7 @@ graph TB
         lm2[LM Head]:::darkLayer
         tel3 --> den2 --> lm2
     end
-    style Block3 class:blockStyle
+    style Block3 fill:#A9CCE3,stroke:#2980B9,stroke-width:1px,rx:8px,ry:8px
 
     %% --- SIXTH ROW: OUTPUT CANVAS ---
     subgraph Row6 [ ]
@@ -144,6 +143,7 @@ graph TB
     TITLE --- Row1
     Row1 --- Row2
 ```
+
 
 ```mermaid
 graph TD
